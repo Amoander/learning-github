@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Learning roadmap: Git, code, security and Claude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F5; --surface:#FFFFFF; --ink:#1B2A41; --muted:#56657A; --rule:#CBD5DF;
+  --main:#2A7F8F; --main-soft:#D6EBEE; --sec:#B8741F; --sec-soft:#F5E6D2;
+  --claude:#6B5CA5; --claude-soft:#E6E2F3; --done:#2E8B57;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#131C28; --surface:#1B2636; --ink:#E4EAF1; --muted:#9AA8BA; --rule:#2E3B4E;
+    --main:#5BB3C2; --main-soft:#1E3A42; --sec:#E0A457; --sec-soft:#3A2D1C;
+    --claude:#A99BE0; --claude-soft:#2C2745; --done:#5FC28A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131C28; --surface:#1B2636; --ink:#E4EAF1; --muted:#9AA8BA; --rule:#2E3B4E;
+  --main:#5BB3C2; --main-soft:#1E3A42; --sec:#E0A457; --sec-soft:#3A2D1C;
+  --claude:#A99BE0; --claude-soft:#2C2745; --done:#5FC28A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.55}
+.wrap{max-width:62rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.lede{color:var(--muted);max-width:60ch;margin:.9rem 0 0}
+.graph-box{margin:2rem 0 1rem;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:1rem;overflow-x:auto}
+.graph-box svg{display:block;min-width:760px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:1.25rem;font-size:.92rem;color:var(--muted);margin:.25rem 0 0}
+.legend span{display:inline-flex;align-items:center;gap:.45rem}
+.sw{width:22px;height:4px;border-radius:2px;display:inline-block}
+.progress{margin:2.25rem 0 .5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.bar{flex:1 1 14rem;height:10px;background:var(--rule);border-radius:5px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--done);transition:width .4s}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+.progress b{font-family:"Bricolage Grotesque",sans-serif}
+
+.phases{margin-top:1.5rem;position:relative}
+.phase{display:grid;grid-template-columns:3.25rem 1fr;gap:0 1rem;position:relative}
+.rail{position:relative;display:flex;justify-content:center}
+.rail::before{content:"";position:absolute;top:0;bottom:0;width:4px;background:var(--main);border-radius:2px}
+.phase:last-child .rail::before{background:repeating-linear-gradient(var(--main) 0 8px,transparent 8px 14px)}
+.phase.sec .rail::before{background:var(--sec)}
+.dot{position:relative;z-index:1;margin-top:1.4rem;width:2.4rem;height:2.4rem;border-radius:50%;
+  background:var(--surface);border:4px solid var(--main);display:grid;place-items:center;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;color:var(--main)}
+.phase.sec .dot{border-color:var(--sec);color:var(--sec)}
+.card{background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--main);
+  border-radius:4px 14px 14px 4px;padding:1.25rem 1.4rem;margin:1rem 0}
+.phase.sec .card{border-left-color:var(--sec)}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+h2{font-size:1.45rem;font-weight:700}
+.when{color:var(--muted);font-size:.95rem}
+.here{display:inline-block;background:var(--main);color:var(--surface);font-weight:700;font-size:.85rem;
+  padding:.15rem .6rem;border-radius:99px;margin-left:.5rem;vertical-align:middle}
+.topics{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none;padding:0;margin:.9rem 0}
+.topics li{background:var(--main-soft);padding:.25rem .65rem;border-radius:6px;font-size:.93rem}
+.phase.sec .topics li{background:var(--sec-soft)}
+.claude{background:var(--claude-soft);border-radius:10px;padding:.75rem 1rem;margin:.9rem 0;font-size:.97rem}
+.claude strong{color:var(--claude)}
+h3{font-size:1.02rem;font-weight:700;margin:1rem 0 .4rem}
+.checks{list-style:none;padding:0;margin:0}
+.checks li{margin:.3rem 0}
+.checks label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.checks input{width:1.15rem;height:1.15rem;margin-top:.2rem;accent-color:var(--done);flex:none}
+.checks input:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
+.checks input:checked + span{color:var(--muted);text-decoration:line-through}
+.mile{font-weight:700}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.75rem;margin:2rem 0 0}
+.status>div{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:.8rem 1rem}
+.status h3{margin:0 0 .2rem;font-size:1rem}
+.status p{margin:0;color:var(--muted);font-size:.95rem}
+.status .cur{border:2px solid var(--main)}
+.status .cur h3{color:var(--main)}
+.checks li.now{display:flex;align-items:flex-start;justify-content:space-between;gap:.6rem;flex-wrap:wrap;
+  background:var(--main-soft);border-radius:8px;padding:.35rem .55rem;margin:.35rem -.55rem}
+.checks li.now em{font-style:normal;font-weight:700;font-size:.82rem;color:var(--main);white-space:nowrap;margin-top:.15rem}
+.creds{margin-top:2.75rem}
+.creds h2{font-size:1.45rem;font-weight:700;margin-bottom:.3rem}
+.creds>p{color:var(--muted);margin:0 0 1.1rem;max-width:60ch}
+.cred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:.9rem}
+.cred{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:1rem 1.1rem}
+.cred .phase-tag{display:inline-block;font-size:.78rem;font-weight:700;color:var(--main);background:var(--main-soft);
+  border-radius:99px;padding:.1rem .55rem;margin-bottom:.5rem}
+.cred.sec-tag .phase-tag{color:var(--sec);background:var(--sec-soft)}
+.cred h3{font-size:1.02rem;margin:0 0 .3rem}
+.cred p{margin:0;color:var(--muted);font-size:.93rem}
+.cred .optional{display:block;margin-top:.5rem;font-size:.82rem;color:var(--muted);font-style:italic}
+.foot{color:var(--muted);font-size:.93rem;margin-top:2rem;max-width:60ch}
+button.reset{font:inherit;font-size:.9rem;background:none;border:1px solid var(--rule);color:var(--muted);
+  border-radius:8px;padding:.35rem .8rem;cursor:pointer}
+button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
+@media (max-width:560px){.phase{grid-template-columns:2.4rem 1fr;gap:0 .6rem}.dot{width:2rem;height:2rem;border-width:3px;font-size:.9rem}.card{padding:1rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>From first commit to secure, polished code</h1>
+  <p class="lede">Your path through Git and GitHub, Python, code quality and security, with Claude working alongside you the whole way. Check things off as you go; your progress stays saved in this browser.</p>
+
+  <div class="graph-box" role="img" aria-label="Roadmap drawn as a git graph: main line through phases 1, 2, 3 and 5; a security branch forks after phase 2, holds phase 4, and merges back before phase 5; a Claude track runs under every phase.">
+    <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+      <style>
+        .m{stroke:var(--main)} .s{stroke:var(--sec)} .c{stroke:var(--claude)}
+        .t{fill:var(--ink);font-size:15px;font-weight:700}
+        .st{fill:var(--muted);font-size:12.5px}
+      </style>
+      <!-- main line -->
+      <line x1="60" y1="120" x2="760" y2="120" class="m" stroke-width="6" stroke-linecap="round"/>
+      <line x1="760" y1="120" x2="860" y2="120" class="m" stroke-width="6" stroke-dasharray="8 8" stroke-linecap="round"/>
+      <!-- security branch -->
+      <path d="M340 120 C 390 120, 390 50, 440 50 L 640 50 C 690 50, 690 120, 740 120" fill="none" class="s" stroke-width="6" stroke-linecap="round"/>
+      <!-- claude track -->
+      <line x1="60" y1="205" x2="860" y2="205" class="c" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+      <g fill="var(--claude)">
+        <circle cx="100" cy="205" r="5"/><circle cx="270" cy="205" r="5"/><circle cx="470" cy="205" r="5"/>
+        <circle cx="560" cy="205" r="5"/><circle cx="790" cy="205" r="5"/>
+      </g>
+      <text x="860" y="232" text-anchor="end" class="st" fill="var(--claude)">Claude alongside every phase</text>
+
+      <!-- nodes -->
+      <g stroke-width="5" fill="var(--surface)">
+        <circle cx="100" cy="120" r="17" class="m"/>
+        <circle cx="270" cy="120" r="17" class="m"/>
+        <circle cx="470" cy="120" r="17" class="m"/>
+        <circle cx="560" cy="50" r="17" class="s"/>
+        <circle cx="790" cy="120" r="17" class="m"/>
+      </g>
+      <g font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="15" text-anchor="middle">
+        <text x="100" y="125" fill="var(--main)">1</text>
+        <text x="270" y="125" fill="var(--main)">2</text>
+        <text x="470" y="125" fill="var(--main)">3</text>
+        <text x="560" y="55" fill="var(--sec)">4</text>
+        <text x="790" y="125" fill="var(--main)">5</text>
+      </g>
+      <!-- labels -->
+      <g text-anchor="middle">
+        <text x="100" y="162" class="t">Foundations</text><text x="100" y="178" class="st">weeks 1–4</text>
+        <text x="270" y="162" class="t">Real programs</text><text x="270" y="178" class="st">months 2–3</text>
+        <text x="470" y="162" class="t">Refined code</text><text x="470" y="178" class="st">months 3–5</text>
+        <text x="560" y="22" class="t">Security</text><text x="660" y="30" class="st">months 4–6, merges back</text>
+        <text x="790" y="162" class="t">Claude, fully</text><text x="790" y="178" class="st">ongoing</text>
+      </g>
+      <!-- you are here -->
+      <g>
+        <path d="M100 96 L94 86 L106 86 Z" fill="var(--ink)"/>
+        <rect x="52" y="58" width="96" height="26" rx="13" fill="var(--ink)"/>
+        <text x="100" y="76" text-anchor="middle" fill="var(--bg)" font-size="13" font-weight="700">You are here</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--main)"></i>Main learning path</span>
+    <span><i class="sw" style="background:var(--sec)"></i>Security branch (runs alongside phase 3)</span>
+    <span><i class="sw" style="background:var(--claude)"></i>Claude as a tool throughout</span>
+  </div>
+
+  <div class="status">
+    <div><h3>Done</h3><p>Account, first repo, README edits, first commit, history and diffs, first branch</p></div>
+    <div class="cur"><h3>Now</h3><p>Pull request: review and merge add-goals into main</p></div>
+    <div><h3>Next</h3><p>Upload the roadmap, start PROGRESS.md, turn on two-factor, then GitHub Desktop</p></div>
+  </div>
+
+  <div class="progress">
+    <b id="pct">0% complete</b><span class="when">learning path</span>
+    <div class="bar" aria-hidden="true"><i id="fill"></i></div>
+    <button class="reset" id="reset" type="button">Clear checkmarks</button>
+  </div>
+
+  <div class="phases">
+    <section class="phase" id="p1">
+      <div class="rail"><div class="dot">1</div></div>
+      <div class="card">
+        <div class="head"><h2>Foundations <span class="here">You are here</span></h2><span class="when">Weeks 1–4</span></div>
+        <ul class="topics"><li>Repos and commits</li><li>Git vs GitHub</li><li>README in Markdown</li><li>Commit history and diffs</li><li>Branches</li><li>Pull requests</li><li>Browser, then GitHub Desktop, then command line</li><li>Python basics</li></ul>
+        <div class="claude"><strong>Claude habit:</strong> try first, then ask for hints, not answers. Paste the full error message with your code, and ask Claude to quiz you on Git commands.</div>
+        <h3>In the browser</h3>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="p1a"><span>Create a GitHub account</span></label></li>
+          <li><label><input type="checkbox" data-id="p1f"><span>Create a repo with a README</span></label></li>
+          <li><label><input type="checkbox" data-id="p1g"><span>Edit the README with Markdown and commit with a clear message</span></label></li>
+          <li><label><input type="checkbox" data-id="p1h"><span>View the commit history and read a diff</span></label></li>
+          <li><label><input type="checkbox" data-id="p1i"><span>Create the add-goals branch and commit to it</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="p1j"><span>Open a pull request, review it, and merge add-goals into main</span></label><em>Current lesson</em></li>
+          <li><label><input type="checkbox" data-id="p1l"><span>Upload the roadmap to your repo</span></label></li>
+          <li><label><input type="checkbox" data-id="p1m"><span>Start a PROGRESS.md learning log and add to it after each lesson</span></label></li>
+          <li><label><input type="checkbox" data-id="p1b"><span>Turn on two-factor authentication</span></label></li>
+        </ul>
+        <h3>On your computer</h3>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="p1k"><span>Install GitHub Desktop, clone your repo, and commit from it</span></label></li>
+          <li><label><input type="checkbox" data-id="p1c"><span>Install Git and learn the core commands: clone, status, add, commit, push, pull, branch, switch</span></label></li>
+          <li><label><input type="checkbox" data-id="p1e"><span class="mile">Milestone: 3–4 small Python scripts committed with clear messages</span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="phase" id="p2">
+      <div class="rail"><div class="dot">2</div></div>
+      <div class="card">
+        <div class="head"><h2>Building real programs</h2><span class="when">Months 2–3</span></div>
+        <ul class="topics"><li>Files and error handling</li><li>pip and modules</li><li>Classes</li><li>Branches and merges</li><li>Merge conflicts</li><li>Pull requests</li><li>.gitignore</li><li>VS Code, terminal, venv</li></ul>
+        <div class="claude"><strong>Claude habit:</strong> use it as a code reviewer. Ask what could be cleaner, have it explain unfamiliar code line by line, and set up a Project to keep your learning context in one place.</div>
+        <h3>Checklist</h3>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="p2a"><span>Create and merge a feature branch</span></label></li>
+          <li><label><input type="checkbox" data-id="p2b"><span>Resolve a merge conflict on purpose</span></label></li>
+          <li><label><input type="checkbox" data-id="p2c"><span>Set up a virtual environment</span></label></li>
+          <li><label><input type="checkbox" data-id="p2e"><span>Optional: put your Job Search Desk on GitHub and host it free with GitHub Pages</span></label></li>
+          <li><label><input type="checkbox" data-id="p2d"><span class="mile">Milestone: a mid-sized project built with branches and pull requests</span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="phase" id="p3">
+      <div class="rail"><div class="dot">3</div></div>
+      <div class="card">
+        <div class="head"><h2>Refined, professional code</h2><span class="when">Months 3–5</span></div>
+        <ul class="topics"><li>pytest</li><li>PEP 8, ruff, black</li><li>Docstrings</li><li>Issues</li><li>GitHub Actions (CI)</li><li>APIs and JSON</li><li>SQLite and SQL</li><li>Flask or FastAPI</li></ul>
+        <div class="claude"><strong>Claude habit:</strong> plan the structure with Claude before coding, have it suggest edge-case tests, and ask for the tradeoffs behind a refactor, not just the rewrite. This is a good time to try Claude Code.</div>
+        <h3>Checklist</h3>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="p3a"><span>Write tests for a project</span></label></li>
+          <li><label><input type="checkbox" data-id="p3b"><span>Run tests automatically with GitHub Actions</span></label></li>
+          <li><label><input type="checkbox" data-id="p3c"><span>Build something that calls an API</span></label></li>
+          <li><label><input type="checkbox" data-id="p3d"><span class="mile">Milestone: a portfolio project with tests, CI and a strong README</span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="phase sec" id="p4">
+      <div class="rail"><div class="dot">4</div></div>
+      <div class="card">
+        <div class="head"><h2>Security</h2><span class="when">Months 4–6, alongside phase 3</span></div>
+        <ul class="topics"><li>No secrets in Git</li><li>.env files</li><li>Secret scanning</li><li>SSH keys</li><li>Branch protection</li><li>Input validation</li><li>OWASP Top 10</li><li>Password hashing</li><li>Dependabot</li></ul>
+        <div class="claude"><strong>Claude habit:</strong> ask for a security-focused review of your own code, with an explanation of each risk so you learn to spot it yourself.</div>
+        <h3>Checklist</h3>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="p4a"><span>Move secrets into environment variables</span></label></li>
+          <li><label><input type="checkbox" data-id="p4b"><span>Enable secret scanning and Dependabot</span></label></li>
+          <li><label><input type="checkbox" data-id="p4c"><span>Switch to SSH keys for GitHub</span></label></li>
+          <li><label><input type="checkbox" data-id="p4d"><span class="mile">Milestone: harden your portfolio project</span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="phase" id="p5">
+      <div class="rail"><div class="dot">5</div></div>
+      <div class="card">
+        <div class="head"><h2>Getting the most out of Claude</h2><span class="when">Ongoing</span></div>
+        <ul class="topics"><li>Give context up front</li><li>Examples of desired output</li><li>Iterate, don't restart</li><li>Projects</li><li>Artifacts</li><li>Search for current docs</li><li>Claude Code</li></ul>
+        <div class="claude"><strong>Mindset:</strong> treat Claude as a knowledgeable pair programmer. Read and understand code before committing it, and check important details against official docs.</div>
+        <h3>Checklist</h3>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="p5a"><span>Set up a Claude Project for a codebase</span></label></li>
+          <li><label><input type="checkbox" data-id="p5b"><span>Use Claude Code on a real project and review every change</span></label></li>
+          <li><label><input type="checkbox" data-id="p5c"><span class="mile">Milestone: ship a feature end to end with Claude as your pair</span></label></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="creds" id="credentials">
+    <h2>Credentials track</h2>
+    <p>Optional certifications that line up with each phase. None are required to get hired; a strong GitHub history counts for more. Check them off as you earn them.</p>
+    <div class="cred-grid">
+      <div class="cred">
+        <span class="phase-tag">Phases 1–2</span>
+        <h3>GitHub Foundations (GH-900)</h3>
+        <p>Entry-level exam on Git basics, repos, branches, pull requests and Issues. A good first target once you've merged a pull request.</p>
+        <ul class="checks"><li><label><input type="checkbox" data-id="c1"><span>Earned</span></label></li></ul>
+      </div>
+      <div class="cred">
+        <span class="phase-tag">Phases 1–2</span>
+        <h3>Python Institute PCEP, then PCAP</h3>
+        <p>The standard entry-level and associate Python certifications, covering the language basics you'll use in every project.</p>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="c2"><span>PCEP earned</span></label></li>
+          <li><label><input type="checkbox" data-id="c3"><span>PCAP earned</span></label></li>
+        </ul>
+      </div>
+      <div class="cred">
+        <span class="phase-tag">Phase 3</span>
+        <h3>GitHub Actions (GH-200)</h3>
+        <p>Automating tests and workflows with CI. Pairs with getting your portfolio project's tests running on every push.</p>
+        <ul class="checks"><li><label><input type="checkbox" data-id="c4"><span>Earned</span></label></li></ul>
+      </div>
+      <div class="cred sec-tag">
+        <span class="phase-tag">Phase 4</span>
+        <h3>GitHub Advanced Security (GH-500)</h3>
+        <p>Secret scanning and push protection, Dependabot and dependency review, and code scanning with CodeQL. Mirrors your security phase closely.</p>
+        <span class="optional">Aimed at security-focused roles; take it if you lean that way.</span>
+        <ul class="checks"><li><label><input type="checkbox" data-id="c5"><span>Earned</span></label></li></ul>
+      </div>
+      <div class="cred sec-tag">
+        <span class="phase-tag">Phase 4</span>
+        <h3>CompTIA Security+ and the OWASP Top 10</h3>
+        <p>Security+ is the widely recognized general security foundation. The OWASP Top 10 isn't a cert, but employers expect you to know it.</p>
+        <span class="optional">Security+ is broader than coding; optional unless you want IT or security work.</span>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="c6"><span>Can explain each OWASP Top 10 risk</span></label></li>
+          <li><label><input type="checkbox" data-id="c7"><span>Security+ earned</span></label></li>
+        </ul>
+      </div>
+      <div class="cred">
+        <span class="phase-tag">Phase 5</span>
+        <h3>AI-assisted development</h3>
+        <p>No established certification exists for this yet. The proof is your work: clean commits, real tests, and code you can explain in your own words.</p>
+        <ul class="checks"><li><label><input type="checkbox" data-id="c8"><span>Can walk someone through a Claude-assisted project line by line</span></label></li></ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:1.6rem">Milestones employers look for</h3>
+    <ul class="checks">
+      <li><label><input type="checkbox" data-id="m1"><span>A profile README and 2–3 well-documented projects</span></label></li>
+      <li><label><input type="checkbox" data-id="m2"><span>A public repo with tests passing in CI (green checkmarks)</span></label></li>
+      <li><label><input type="checkbox" data-id="m3"><span>A merged pull request on someone else's open-source project</span></label></li>
+    </ul>
+  </section>
+
+  <p class="foot">The timeframes assume a few hours a week. Speed up or slow down as needed; the order matters more than the pace.</p>
+</div>
+
+<script>
+(function(){
+  var KEY="roadmap-checks-v3";
+  var boxes=[].slice.call(document.querySelectorAll('.checks input'));
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true};
+  var state={};
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(raw){ state=JSON.parse(raw)||{}; }
+    else{
+      var old=localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
+      state=old?(JSON.parse(old)||{}):{};
+      for(var k in DONE) state[k]=true;
+    }
+  }catch(e){ state=Object.assign({},DONE); }
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){} }
+  function update(){
+    var path=boxes.filter(function(b){return b.closest('.phases')});
+    var n=path.filter(function(b){return b.checked}).length;
+    var p=Math.round(n/path.length*100);
+    document.getElementById('pct').textContent=p+"% complete";
+    document.getElementById('fill').style.width=p+"%";
+  }
+  boxes.forEach(function(b){
+    b.checked=!!state[b.dataset.id];
+    b.addEventListener('change',function(){ state[b.dataset.id]=b.checked; save(); update(); });
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    state={}; boxes.forEach(function(b){b.checked=false}); save(); update();
+  });
+  update();
+})();
+</script>
+</body>
+</html>
