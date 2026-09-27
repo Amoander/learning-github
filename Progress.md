@@ -13,3 +13,4 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Opened my first pull request, reviewed the changes, and merged it into main
 - Built a learning roadmap with Claude and uploaded it to this repo
 - Started this progress log
+- Log 2FA setup
