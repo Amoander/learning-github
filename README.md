@@ -8,11 +8,11 @@ Learning Git and Github to build skills.
 Learn the basic Git workflow
 Build a small project to share
 
-\## Skills learned
+## Skills learned
 
-\- Commits, branches, and pull requests on GitHub
+- Commits, branches, and pull requests on GitHub
 
-\- GitHub Desktop
+- GitHub Desktop
 
-\- Git on the command line
+- Git on the command line
 
