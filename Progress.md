@@ -19,8 +19,11 @@ A running log of what I've learned about Git, GitHub, and coding.
 * Installed GitHub Desktop and cloned my repo to my computer
 * Edited a file locally and pushed it to GitHub
 * Install Git and checked repo with git status and git log
-* Made my first commit and push from the command line
-* Git case-sensitive fix, always check fit status before and after each step. 
+- Made my first commit and push from the command line
+- Git case-sensitive fix: always check git status before and after each step
 
 ## September 28, 2026
 - Practiced git pull, git branch, and git switch
+- Ran the full branch and pull request cycle from the command line
+- Fixed a Markdown formatting bug caught during pull request review
+- Installed VS Code and committed and pushed from it
