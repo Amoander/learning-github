@@ -20,4 +20,5 @@ A running log of what I've learned about Git, GitHub, and coding.
 * Edited a file locally and pushed it to GitHub
 * Install Git and checked repo with git status and git log
 * Made my first commit and push from the command line
+* Git case-sensitive fix, always check fit status before and after each step. 
 
