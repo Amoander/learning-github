@@ -18,4 +18,6 @@ A running log of what I've learned about Git, GitHub, and coding.
 * Log 2FA setup
 * Installed GitHub Desktop and cloned my repo to my computer
 * Edited a file locally and pushed it to GitHub
+* Install Git and checked repo with git status and git log
+* Made my first commit and push from the command line
 
