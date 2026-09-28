@@ -22,3 +22,5 @@ A running log of what I've learned about Git, GitHub, and coding.
 * Made my first commit and push from the command line
 * Git case-sensitive fix, always check fit status before and after each step. 
 
+## September 28, 2026
+- Practiced git pull, git branch, and git switch
