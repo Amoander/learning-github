@@ -27,3 +27,9 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Ran the full branch and pull request cycle from the command line
 - Fixed a Markdown formatting bug caught during pull request review
 - Installed VS Code and committed and pushed from it
+
+## October 7, 2026
+- Installed Python 3.14 and the VS Code Python extension
+- Wrote and ran my first Python script (hello.py)
+- Learned the difference between the editor (code) and the terminal (commands)
+- Read my first Python error message: file, line number, and the problem line
