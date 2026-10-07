@@ -33,3 +33,6 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Wrote and ran my first Python script (hello.py)
 - Learned the difference between the editor (code) and the terminal (commands)
 - Read my first Python error message: file, line number, and the problem line
+- Built a number guessing game (guess.py) with import, while loops, and if/elif
+- Broke it on purpose: ValueError, IndentationError, NameError
+- Built it on a branch, reopened a closed pull request, and merged it
