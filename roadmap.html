@@ -167,9 +167,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
   </div>
 
   <div class="status">
-    <div><h3>Done</h3><p>Git on the website, in GitHub Desktop, and on the command line: commits, branches, pull requests, merges, push and pull. Plus 2FA, a progress log, and a study guide.</p></div>
-    <div class="cur"><h3>Now</h3><p>VS Code: open your repo, fix the Goals bullets, commit and push from the editor</p></div>
-    <div><h3>Next</h3><p>Log today's work, then start Python with your first small scripts</p></div>
+    <div><h3>Done</h3><p>Git three ways (website, GitHub Desktop, command line), VS Code, 2FA, a progress log, and Python installed with a first working script.</p></div>
+    <div class="cur"><h3>Now</h3><p>Script 2: a number-guessing game with if/else, loops, and random numbers</p></div>
+    <div><h3>Next</h3><p>Scripts 3 and 4 to finish Phase 1, then on to Phase 2</p></div>
   </div>
 
   <div class="progress">
@@ -202,7 +202,15 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
           <li><label><input type="checkbox" data-id="p1k"><span>Install GitHub Desktop, clone your repo, and commit from it</span></label></li>
           <li><label><input type="checkbox" data-id="p1c"><span>Install Git and learn the core commands: clone, status, add, commit, push, pull, branch, switch</span></label></li>
           <li><label><input type="checkbox" data-id="p1n"><span>Branch, push, pull request, merge, and pull, all from the command line</span></label></li>
-          <li class="now"><label><input type="checkbox" data-id="p1o"><span>Install VS Code, fix the README Goals, and commit and push from VS Code</span></label><em>Current lesson</em></li>
+          <li><label><input type="checkbox" data-id="p1o"><span>Install VS Code, fix the README Goals, and commit and push from VS Code</span></label></li>
+        </ul>
+        <h3>Python</h3>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-id="p1p"><span>Install Python and the VS Code Python extension</span></label></li>
+          <li><label><input type="checkbox" data-id="p1q"><span>Script 1: hello.py (print, input, variables)</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="p1r"><span>Script 2: number-guessing game (if/else, loops, import random)</span></label><em>Current lesson</em></li>
+          <li><label><input type="checkbox" data-id="p1s"><span>Script 3</span></label></li>
+          <li><label><input type="checkbox" data-id="p1t"><span>Script 4</span></label></li>
           <li><label><input type="checkbox" data-id="p1e"><span class="mile">Milestone: 3–4 small Python scripts committed with clear messages</span></label></li>
         </ul>
       </div>
@@ -336,15 +344,15 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v4";
+  var KEY="roadmap-checks-v5";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);
     if(raw){ state=JSON.parse(raw)||{}; }
     else{
-      var old=localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
+      var old=localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
       state=old?(JSON.parse(old)||{}):{};
       for(var k in DONE) state[k]=true;
     }
