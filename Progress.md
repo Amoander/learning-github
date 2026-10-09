@@ -36,3 +36,4 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Built a number guessing game (guess.py) with import, while loops, and if/elif
 - Broke it on purpose: ValueError, IndentationError, NameError
 - Built it on a branch, reopened a closed pull request, and merged it
+- Lesson: read the commit message before pressing Enter. 
