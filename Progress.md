@@ -43,3 +43,6 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Built a to-do list script (todo.py) with lists, a function, and a menu loop
 - Learned that lists count from 0, and saw an IndexError when asking for a position that doesn't exist
 - Shipped it on a branch with a pull request
+- Built a tip calculator (tip.py) with float, math operators, and f-string formatting
+- Saw a ZeroDivisionError when splitting a bill among 0 people
+- Completed the Phase 1 milestone: 4 Python scripts, each shipped with a pull request
