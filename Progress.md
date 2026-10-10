@@ -37,3 +37,9 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Broke it on purpose: ValueError, IndentationError, NameError
 - Built it on a branch, reopened a closed pull request, and merged it
 - Lesson: read the commit message before pressing Enter. 
+
+## October 10, 2026
+
+- Built a to-do list script (todo.py) with lists, a function, and a menu loop
+- Learned that lists count from 0, and saw an IndexError when asking for a position that doesn't exist
+- Shipped it on a branch with a pull request
