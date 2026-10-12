@@ -131,7 +131,7 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
       <!-- nodes -->
       <g stroke-width="5" fill="var(--surface)">
-        <circle cx="100" cy="120" r="17" class="m"/>
+        <circle cx="100" cy="120" r="17" class="m" style="fill:var(--main-soft)"/>
         <circle cx="270" cy="120" r="17" class="m"/>
         <circle cx="470" cy="120" r="17" class="m"/>
         <circle cx="560" cy="50" r="17" class="s"/>
@@ -154,9 +154,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
       </g>
       <!-- you are here -->
       <g>
-        <path d="M100 96 L94 86 L106 86 Z" fill="var(--ink)"/>
-        <rect x="52" y="58" width="96" height="26" rx="13" fill="var(--ink)"/>
-        <text x="100" y="76" text-anchor="middle" fill="var(--bg)" font-size="13" font-weight="700">You are here</text>
+        <path d="M270 96 L264 86 L276 86 Z" fill="var(--ink)"/>
+        <rect x="222" y="58" width="96" height="26" rx="13" fill="var(--ink)"/>
+        <text x="270" y="76" text-anchor="middle" fill="var(--bg)" font-size="13" font-weight="700">You are here</text>
       </g>
     </svg>
   </div>
@@ -167,9 +167,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
   </div>
 
   <div class="status">
-    <div><h3>Done</h3><p>Git three ways (website, GitHub Desktop, command line), VS Code, 2FA, a progress log, and Python installed with a first working script.</p></div>
-    <div class="cur"><h3>Now</h3><p>Script 2: a number-guessing game with if/else, loops, and random numbers</p></div>
-    <div><h3>Next</h3><p>Scripts 3 and 4 to finish Phase 1, then on to Phase 2</p></div>
+    <div><h3>Done</h3><p>Phase 1 complete: Git three ways, VS Code, 2FA, a progress log, and 4 Python scripts each shipped with a pull request.</p></div>
+    <div class="cur"><h3>Now</h3><p>Phase 2: error handling with try/except, so your scripts stop crashing on bad input</p></div>
+    <div><h3>Next</h3><p>Save the to-do list to a file, then virtual environments and merge conflicts</p></div>
   </div>
 
   <div class="progress">
@@ -182,7 +182,7 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
     <section class="phase" id="p1">
       <div class="rail"><div class="dot">1</div></div>
       <div class="card">
-        <div class="head"><h2>Foundations <span class="here">You are here</span></h2><span class="when">Weeks 1–4</span></div>
+        <div class="head"><h2>Foundations <span class="here" style="background:var(--done)">Complete</span></h2><span class="when">Weeks 1–4</span></div>
         <ul class="topics"><li>Repos and commits</li><li>Git vs GitHub</li><li>README in Markdown</li><li>Commit history and diffs</li><li>Branches</li><li>Pull requests</li><li>Browser, then GitHub Desktop, then command line</li><li>Python basics</li></ul>
         <div class="claude"><strong>Claude habit:</strong> try first, then ask for hints, not answers. Paste the full error message with your code, and ask Claude to quiz you on Git commands.</div>
         <h3>In the browser</h3>
@@ -208,9 +208,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
         <ul class="checks">
           <li><label><input type="checkbox" data-id="p1p"><span>Install Python and the VS Code Python extension</span></label></li>
           <li><label><input type="checkbox" data-id="p1q"><span>Script 1: hello.py (print, input, variables)</span></label></li>
-          <li class="now"><label><input type="checkbox" data-id="p1r"><span>Script 2: number-guessing game (if/else, loops, import random)</span></label><em>Current lesson</em></li>
-          <li><label><input type="checkbox" data-id="p1s"><span>Script 3</span></label></li>
-          <li><label><input type="checkbox" data-id="p1t"><span>Script 4</span></label></li>
+          <li><label><input type="checkbox" data-id="p1r"><span>Script 2: guess.py, number-guessing game (import, while loops, if/elif)</span></label></li>
+          <li><label><input type="checkbox" data-id="p1s"><span>Script 3: todo.py, to-do list (lists, functions, menu loop)</span></label></li>
+          <li><label><input type="checkbox" data-id="p1t"><span>Script 4: tip.py, tip calculator (float, math, f-strings)</span></label></li>
           <li><label><input type="checkbox" data-id="p1e"><span class="mile">Milestone: 3–4 small Python scripts committed with clear messages</span></label></li>
         </ul>
       </div>
@@ -219,12 +219,14 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
     <section class="phase" id="p2">
       <div class="rail"><div class="dot">2</div></div>
       <div class="card">
-        <div class="head"><h2>Building real programs</h2><span class="when">Months 2–3</span></div>
+        <div class="head"><h2>Building real programs <span class="here">You are here</span></h2><span class="when">Months 2–3</span></div>
         <ul class="topics"><li>Files and error handling</li><li>pip and modules</li><li>Classes</li><li>Branches and merges</li><li>Merge conflicts</li><li>Pull requests</li><li>.gitignore</li><li>VS Code, terminal, venv</li></ul>
         <div class="claude"><strong>Claude habit:</strong> use it as a code reviewer. Ask what could be cleaner, have it explain unfamiliar code line by line, and set up a Project to keep your learning context in one place.</div>
         <h3>Checklist</h3>
         <ul class="checks">
           <li><label><input type="checkbox" data-id="p2a"><span>Create and merge a feature branch</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="p2f"><span>Error handling: fix the crashes in guess.py, todo.py and tip.py with try/except</span></label><em>Current lesson</em></li>
+          <li><label><input type="checkbox" data-id="p2g"><span>Save the to-do list to a file so tasks survive between runs</span></label></li>
           <li><label><input type="checkbox" data-id="p2b"><span>Resolve a merge conflict on purpose</span></label></li>
           <li><label><input type="checkbox" data-id="p2c"><span>Set up a virtual environment</span></label></li>
           <li><label><input type="checkbox" data-id="p2e"><span>Optional: put your Job Search Desk on GitHub and host it free with GitHub Pages</span></label></li>
@@ -344,15 +346,15 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v5";
+  var KEY="roadmap-checks-v6";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);
     if(raw){ state=JSON.parse(raw)||{}; }
     else{
-      var old=localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
+      var old=localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
       state=old?(JSON.parse(old)||{}):{};
       for(var k in DONE) state[k]=true;
     }
