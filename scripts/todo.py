@@ -1,4 +1,4 @@
-# To-do list
+# To-do list, with error handling
 tasks = []
 
 
@@ -22,8 +22,18 @@ while True:
         tasks.append(task)
         print("Added:", task)
     elif choice == "3":
+        if len(tasks) == 0:
+            print("Nothing to remove.")
+            continue
         show_tasks()
-        number = int(input("Number to remove: "))
+        try:
+            number = int(input("Number to remove: "))
+        except ValueError:
+            print("Please enter a task number, like 1")
+            continue
+        if number < 1 or number > len(tasks):
+            print(f"Pick a number from 1 to {len(tasks)}")
+            continue
         removed = tasks.pop(number - 1)
         print("Removed:", removed)
     elif choice == "4":
