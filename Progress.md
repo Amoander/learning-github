@@ -46,3 +46,10 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Built a tip calculator (tip.py) with float, math operators, and f-string formatting
 - Saw a ZeroDivisionError when splitting a bill among 0 people
 - Completed the Phase 1 milestone: 4 Python scripts, each shipped with a pull request
+
+## October 12, 2026
+
+- Added error handling to tip.py, guess.py and todo.py with try/except
+- Learned to CATCH errors (try/except) and PREVENT them (if checks)
+- New Python: function parameters, return, continue, or
+- Built one feature as 3 commits on one branch, merged with a single pull request
