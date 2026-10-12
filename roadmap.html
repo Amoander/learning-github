@@ -167,9 +167,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
   </div>
 
   <div class="status">
-    <div><h3>Done</h3><p>Phase 1 complete: Git three ways, VS Code, 2FA, a progress log, and 4 Python scripts each shipped with a pull request.</p></div>
-    <div class="cur"><h3>Now</h3><p>Phase 2: error handling with try/except, so your scripts stop crashing on bad input</p></div>
-    <div><h3>Next</h3><p>Save the to-do list to a file, then virtual environments and merge conflicts</p></div>
+    <div><h3>Done</h3><p>Phase 1 complete, plus error handling (try/except) added to all three interactive scripts in one 3-commit pull request.</p></div>
+    <div class="cur"><h3>Now</h3><p>Save the to-do list to a file, so tasks survive between runs</p></div>
+    <div><h3>Next</h3><p>Resolve a merge conflict on purpose, then virtual environments</p></div>
   </div>
 
   <div class="progress">
@@ -225,8 +225,8 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
         <h3>Checklist</h3>
         <ul class="checks">
           <li><label><input type="checkbox" data-id="p2a"><span>Create and merge a feature branch</span></label></li>
-          <li class="now"><label><input type="checkbox" data-id="p2f"><span>Error handling: fix the crashes in guess.py, todo.py and tip.py with try/except</span></label><em>Current lesson</em></li>
-          <li><label><input type="checkbox" data-id="p2g"><span>Save the to-do list to a file so tasks survive between runs</span></label></li>
+          <li><label><input type="checkbox" data-id="p2f"><span>Error handling: fix the crashes in guess.py, todo.py and tip.py with try/except</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="p2g"><span>Save the to-do list to a file so tasks survive between runs</span></label><em>Current lesson</em></li>
           <li><label><input type="checkbox" data-id="p2b"><span>Resolve a merge conflict on purpose</span></label></li>
           <li><label><input type="checkbox" data-id="p2c"><span>Set up a virtual environment</span></label></li>
           <li><label><input type="checkbox" data-id="p2e"><span>Optional: put your Job Search Desk on GitHub and host it free with GitHub Pages</span></label></li>
@@ -346,15 +346,15 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v6";
+  var KEY="roadmap-checks-v7";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);
     if(raw){ state=JSON.parse(raw)||{}; }
     else{
-      var old=localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
+      var old=localStorage.getItem("roadmap-checks-v6")||localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
       state=old?(JSON.parse(old)||{}):{};
       for(var k in DONE) state[k]=true;
     }
