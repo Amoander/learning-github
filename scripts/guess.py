@@ -1,4 +1,4 @@
-# Number guessing game
+# Number guessing game, with error handling
 import random
 
 secret = random.randint(1, 10)
@@ -8,7 +8,16 @@ guesses = 0
 print("I'm thinking of a number between 1 and 10.")
 
 while guess != secret:
-    guess = int(input("Your guess: "))
+    try:
+        guess = int(input("Your guess: "))
+    except ValueError:
+        print("Please enter a whole number, like 7")
+        continue
+
+    if guess < 1 or guess > 10:
+        print("Stay between 1 and 10!")
+        continue
+
     guesses = guesses + 1
 
     if guess < secret:
