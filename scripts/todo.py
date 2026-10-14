@@ -1,5 +1,24 @@
-# To-do list, with error handling
-tasks = []
+# To-do list, saved to a file
+TASKS_FILE = "tasks.txt"
+
+
+def load_tasks():
+    loaded = []
+    try:
+        with open(TASKS_FILE) as file:
+            for line in file:
+                task = line.strip()
+                if task != "":
+                    loaded.append(task)
+    except FileNotFoundError:
+        pass
+    return loaded
+
+
+def save_tasks():
+    with open(TASKS_FILE, "w") as file:
+        for task in tasks:
+            file.write(task + "\n")
 
 
 def show_tasks():
@@ -10,6 +29,9 @@ def show_tasks():
             print(number, "-", task)
 
 
+tasks = load_tasks()
+print(f"Loaded {len(tasks)} task(s).")
+
 while True:
     print()
     print("1) Show tasks  2) Add task  3) Remove task  4) Quit")
@@ -18,8 +40,12 @@ while True:
     if choice == "1":
         show_tasks()
     elif choice == "2":
-        task = input("New task: ")
+        task = input("New task: ").strip()
+        if task == "":
+            print("A task can't be blank.")
+            continue
         tasks.append(task)
+        save_tasks()
         print("Added:", task)
     elif choice == "3":
         if len(tasks) == 0:
@@ -35,6 +61,7 @@ while True:
             print(f"Pick a number from 1 to {len(tasks)}")
             continue
         removed = tasks.pop(number - 1)
+        save_tasks()
         print("Removed:", removed)
     elif choice == "4":
         print("Goodbye!")
