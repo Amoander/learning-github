@@ -1,7 +1,7 @@
 # learning-github
 
 Practice Repo for Github
-Learning Git and Github to build skills.
+Learning Git, Github, and Python to build real skills.
 
 ## Goals
 
