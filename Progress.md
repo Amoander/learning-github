@@ -53,3 +53,9 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Learned to CATCH errors (try/except) and PREVENT them (if checks)
 - New Python: function parameters, return, continue, or
 - Built one feature as 3 commits on one branch, merged with a single pull request
+
+## October 14, 2026
+
+- todo.py now saves tasks to tasks.txt and loads them on startup
+- Learned open(), with, read/write modes, "\n", .strip(), pass, FileNotFoundError
+- Added a .gitignore so personal data never goes to GitHub
