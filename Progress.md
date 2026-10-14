@@ -59,3 +59,6 @@ A running log of what I've learned about Git, GitHub, and coding.
 - todo.py now saves tasks to tasks.txt and loads them on startup
 - Learned open(), with, read/write modes, "\n", .strip(), pass, FileNotFoundError
 - Added a .gitignore so personal data never goes to GitHub
+- Created a merge conflict on purpose with two branches editing the same README line
+- Resolved it in VS Code, finished the merge, and viewed it with git log --graph
+- Learned git merge, git merge --abort, and git rm
