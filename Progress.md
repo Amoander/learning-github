@@ -62,3 +62,9 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Created a merge conflict on purpose with two branches editing the same README line
 - Resolved it in VS Code, finished the merge, and viewed it with git log --graph
 - Learned git merge, git merge --abort, and git rm
+
+## October 15, 2026
+
+- Created a virtual environment (.venv) and installed rich with pip
+- Saw ModuleNotFoundError when the venv was off; learned to check for (.venv)
+- Saved packages to requirements.txt and added .venv/ to .gitignore

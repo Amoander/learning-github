@@ -167,9 +167,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
   </div>
 
   <div class="status">
-    <div><h3>Done</h3><p>Phase 1 complete. Phase 2 so far: error handling, saving to a file with .gitignore, and resolving a real merge conflict.</p></div>
-    <div class="cur"><h3>Now</h3><p>Virtual environments and pip: install your first outside package</p></div>
-    <div><h3>Next</h3><p>The Phase 2 milestone: a mid-sized project built with branches and pull requests</p></div>
+    <div><h3>Done</h3><p>Phase 1 complete. Phase 2 so far: error handling, saving to a file with .gitignore, resolving a real merge conflict, and a virtual environment with pip and requirements.txt.</p></div>
+    <div class="cur"><h3>Now</h3><p>The Phase 2 milestone: plan and build a mid-sized project with branches and pull requests</p></div>
+    <div><h3>Next</h3><p>Phase 3: tests with pytest, then automatic checks with GitHub Actions</p></div>
   </div>
 
   <div class="progress">
@@ -228,9 +228,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
           <li><label><input type="checkbox" data-id="p2f"><span>Error handling: fix the crashes in guess.py, todo.py and tip.py with try/except</span></label></li>
           <li><label><input type="checkbox" data-id="p2g"><span>Save the to-do list to a file so tasks survive between runs, and add a .gitignore</span></label></li>
           <li><label><input type="checkbox" data-id="p2b"><span>Resolve a merge conflict on purpose</span></label></li>
-          <li class="now"><label><input type="checkbox" data-id="p2c"><span>Set up a virtual environment and install a package with pip</span></label><em>Current lesson</em></li>
+          <li><label><input type="checkbox" data-id="p2c"><span>Set up a virtual environment and install a package with pip</span></label></li>
           <li><label><input type="checkbox" data-id="p2e"><span>Optional: put your Job Search Desk on GitHub and host it free with GitHub Pages</span></label></li>
-          <li><label><input type="checkbox" data-id="p2d"><span class="mile">Milestone: a mid-sized project built with branches and pull requests</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="p2d"><span class="mile">Milestone: a mid-sized project built with branches and pull requests</span></label><em>Current lesson</em></li>
         </ul>
       </div>
     </section>
@@ -346,15 +346,15 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v9";
+  var KEY="roadmap-checks-v10";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);
     if(raw){ state=JSON.parse(raw)||{}; }
     else{
-      var old=localStorage.getItem("roadmap-checks-v8")||localStorage.getItem("roadmap-checks-v7")||localStorage.getItem("roadmap-checks-v6")||localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
+      var old=localStorage.getItem("roadmap-checks-v9")||localStorage.getItem("roadmap-checks-v8")||localStorage.getItem("roadmap-checks-v7")||localStorage.getItem("roadmap-checks-v6")||localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
       state=old?(JSON.parse(old)||{}):{};
       for(var k in DONE) state[k]=true;
     }
