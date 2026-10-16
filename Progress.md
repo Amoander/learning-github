@@ -68,3 +68,11 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Created a virtual environment (.venv) and installed rich with pip
 - Saw ModuleNotFoundError when the venv was off; learned to check for (.venv)
 - Saved packages to requirements.txt and added .venv/ to .gitignore
+
+## October 16, 2026
+
+- Created a separate repo, tally-fitness, for my Tally Fitness tracker
+- Fixed a folder that wasn't a Git repo by cloning fresh and copying files in
+- Added .nojekyll and deployed the tracker live with GitHub Pages
+- Installed it on my phone with Add to Home Screen
+- Tally is now my Phase 2 milestone project
