@@ -84,3 +84,9 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Learned about VS Code's Restricted Mode (Workspace Trust) and trusted my own folder
 - Learned VS Code auto-activates my .venv in learning-github
 - Installed the Claude Code extension; keeping it disabled until its own lesson
+- Found a bug while testing Tally on my phone: the barcode scanner was a placeholder
+- Reported it as GitHub Issue #1 with steps, expected result, and device info
+- Shipped the Tally chat's fix on a branch with 2 commits (code + README privacy update)
+- Merged the PR, the site redeployed, and the scanner works on my phone
+- Learned PRs need "Fixes #1" before merging to auto-close; closed the issue by hand with a link
+- Learned slashes in branch names make folders, so I'll use hyphens with OneDrive
