@@ -76,3 +76,11 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Added .nojekyll and deployed the tracker live with GitHub Pages
 - Installed it on my phone with Add to Home Screen
 - Tally is now my Phase 2 milestone project
+
+## October 18, 2026
+
+- Wrote a README for tally-fitness with a description, live link, and screenshot
+- Shipped it with a branch and pull request in the tally-fitness repo
+- Learned about VS Code's Restricted Mode (Workspace Trust) and trusted my own folder
+- Learned VS Code auto-activates my .venv in learning-github
+- Installed the Claude Code extension; keeping it disabled until its own lesson
