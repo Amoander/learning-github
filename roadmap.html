@@ -132,7 +132,7 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
       <!-- nodes -->
       <g stroke-width="5" fill="var(--surface)">
         <circle cx="100" cy="120" r="17" class="m" style="fill:var(--main-soft)"/>
-        <circle cx="270" cy="120" r="17" class="m"/>
+        <circle cx="270" cy="120" r="17" class="m" style="fill:var(--main-soft)"/>
         <circle cx="470" cy="120" r="17" class="m"/>
         <circle cx="560" cy="50" r="17" class="s"/>
         <circle cx="790" cy="120" r="17" class="m"/>
@@ -154,9 +154,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
       </g>
       <!-- you are here -->
       <g>
-        <path d="M270 96 L264 86 L276 86 Z" fill="var(--ink)"/>
-        <rect x="222" y="58" width="96" height="26" rx="13" fill="var(--ink)"/>
-        <text x="270" y="76" text-anchor="middle" fill="var(--bg)" font-size="13" font-weight="700">You are here</text>
+        <path d="M470 96 L464 86 L476 86 Z" fill="var(--ink)"/>
+        <rect x="422" y="58" width="96" height="26" rx="13" fill="var(--ink)"/>
+        <text x="470" y="76" text-anchor="middle" fill="var(--bg)" font-size="13" font-weight="700">You are here</text>
       </g>
     </svg>
   </div>
@@ -167,9 +167,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
   </div>
 
   <div class="status">
-    <div><h3>Done</h3><p>Phase 1 complete. Phase 2 so far: error handling, saving to a file with .gitignore, resolving a real merge conflict, and a virtual environment with pip and requirements.txt.</p></div>
-    <div class="cur"><h3>Now</h3><p>First real bug found, tracked as Issue #1, fixed, and shipped. Next: 2–3 more Tally improvements, each with an Issue, branch, and PR.</p></div>
-    <div><h3>Next</h3><p>Finish the Phase 2 milestone, then Phase 3: tests with pytest and automatic checks with GitHub Actions</p></div>
+    <div><h3>Done</h3><p>Phases 1 and 2 complete. Tally Fitness is live with 3 shipped changes (scanner #1, backup #2, step counter removed #3), tracked with GitHub Issues.</p></div>
+    <div class="cur"><h3>Now</h3><p>Phase 3: write automated tests with pytest, starting with your Python scripts</p></div>
+    <div><h3>Next</h3><p>Run tests automatically on every push with GitHub Actions (CI)</p></div>
   </div>
 
   <div class="progress">
@@ -219,7 +219,7 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
     <section class="phase" id="p2">
       <div class="rail"><div class="dot">2</div></div>
       <div class="card">
-        <div class="head"><h2>Building real programs <span class="here">You are here</span></h2><span class="when">Months 2–3</span></div>
+        <div class="head"><h2>Building real programs <span class="here" style="background:var(--done)">Complete</span></h2><span class="when">Months 2–3</span></div>
         <ul class="topics"><li>Files and error handling</li><li>pip and modules</li><li>Classes</li><li>Branches and merges</li><li>Merge conflicts</li><li>Pull requests</li><li>.gitignore</li><li>VS Code, terminal, venv</li></ul>
         <div class="claude"><strong>Claude habit:</strong> use it as a code reviewer. Ask what could be cleaner, have it explain unfamiliar code line by line, and set up a Project to keep your learning context in one place.</div>
         <h3>Checklist</h3>
@@ -237,7 +237,7 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
           <li><label><input type="checkbox" data-id="p2i"><span>Write a real README: what it is, live link, screenshot</span></label></li>
           <li><label><input type="checkbox" data-id="p2j"><span>Ship a first change from the Tally chat: the working barcode scanner, via branch, PR, merge, auto-redeploy</span></label></li>
           <li><label><input type="checkbox" data-id="p2k"><span>Track ideas and bugs with GitHub Issues (Issue #1: scanner bug, fixed)</span></label></li>
-          <li class="now"><label><input type="checkbox" data-id="p2d"><span class="mile">Milestone: ship 2–3 more Tally changes with branches and pull requests</span></label><em>Current lesson</em></li>
+          <li><label><input type="checkbox" data-id="p2d"><span class="mile">Milestone: ship 2–3 more Tally changes with branches and pull requests (backup and restore #2, step counter removed #3)</span></label></li>
         </ul>
       </div>
     </section>
@@ -245,12 +245,12 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
     <section class="phase" id="p3">
       <div class="rail"><div class="dot">3</div></div>
       <div class="card">
-        <div class="head"><h2>Refined, professional code</h2><span class="when">Months 3–5</span></div>
+        <div class="head"><h2>Refined, professional code <span class="here">You are here</span></h2><span class="when">Months 3–5</span></div>
         <ul class="topics"><li>pytest</li><li>PEP 8, ruff, black</li><li>Docstrings</li><li>Issues</li><li>GitHub Actions (CI)</li><li>APIs and JSON</li><li>SQLite and SQL</li><li>Flask or FastAPI</li></ul>
         <div class="claude"><strong>Claude habit:</strong> plan the structure with Claude before coding, have it suggest edge-case tests, and ask for the tradeoffs behind a refactor, not just the rewrite. This is a good time to try Claude Code.</div>
         <h3>Checklist</h3>
         <ul class="checks">
-          <li><label><input type="checkbox" data-id="p3a"><span>Write tests for a project</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="p3a"><span>Write tests for a project (pytest)</span></label><em>Current lesson</em></li>
           <li><label><input type="checkbox" data-id="p3b"><span>Run tests automatically with GitHub Actions</span></label></li>
           <li><label><input type="checkbox" data-id="p3c"><span>Build something that calls an API</span></label></li>
           <li><label><input type="checkbox" data-id="p3d"><span class="mile">Milestone: a portfolio project with tests, CI and a strong README</span></label></li>
@@ -353,15 +353,15 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v13";
+  var KEY="roadmap-checks-v14";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);
     if(raw){ state=JSON.parse(raw)||{}; }
     else{
-      var old=localStorage.getItem("roadmap-checks-v12")||localStorage.getItem("roadmap-checks-v11")||localStorage.getItem("roadmap-checks-v10")||localStorage.getItem("roadmap-checks-v9")||localStorage.getItem("roadmap-checks-v8")||localStorage.getItem("roadmap-checks-v7")||localStorage.getItem("roadmap-checks-v6")||localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
+      var old=localStorage.getItem("roadmap-checks-v13")||localStorage.getItem("roadmap-checks-v12")||localStorage.getItem("roadmap-checks-v11")||localStorage.getItem("roadmap-checks-v10")||localStorage.getItem("roadmap-checks-v9")||localStorage.getItem("roadmap-checks-v8")||localStorage.getItem("roadmap-checks-v7")||localStorage.getItem("roadmap-checks-v6")||localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
       state=old?(JSON.parse(old)||{}):{};
       for(var k in DONE) state[k]=true;
     }

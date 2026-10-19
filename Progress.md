@@ -90,3 +90,13 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Merged the PR, the site redeployed, and the scanner works on my phone
 - Learned PRs need "Fixes #1" before merging to auto-close; closed the issue by hand with a link
 - Learned slashes in branch names make folders, so I'll use hyphens with OneDrive
+
+## October 19, 2026
+
+- Planned Tally improvements as GitHub Issues (#2-#5) with labels: enhancement, bug, question
+- Wrote "Done when" checklists so each feature is testable on my phone
+- Decided to remove the unreliable step counter and recorded the reasoning on the Issue
+- Shipped backup/restore (#2) and step counter removal (#3) as separate PRs, in order
+- Reviewed the Tally chat's output before shipping: caught a combined download and a README overwrite
+- Learned the > prompt means an unclosed quote; Ctrl + C cancels safely
+- Completed the Phase 2 milestone and Phase 2
