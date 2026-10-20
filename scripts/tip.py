@@ -1,11 +1,24 @@
-# Tip calculator, with error handling
+# Tip calculator, with error handling and a testable math function
+
+
+def calculate_tip(bill, tip_percent, people):
+    """Return (tip, total, per_person) for a bill split among people."""
+    if people < 1:
+        raise ValueError("people must be at least 1")
+    tip = bill * tip_percent / 100
+    total = bill + tip
+    per_person = total / people
+    return tip, total, per_person
+
 
 def ask_float(prompt):
     while True:
         try:
             return float(input(prompt))
         except ValueError:
-            print("Please enter a valid number, like 47.83")
+            print("Please enter a number, like 47.83")
+
+
 def ask_people(prompt):
     while True:
         try:
@@ -14,17 +27,21 @@ def ask_people(prompt):
                 return people
             print("At least 1 person has to pay!")
         except ValueError:
-            print("Please enter a valid number, like 3")
+            print("Please enter a whole number, like 3")
 
-bill = ask_float("Bill total: $")
-tip_percent = ask_float("Tip percentage (e.g. 18): ")
-people = ask_people("Number of people splitting: ")
 
-tip = bill * (tip_percent / 100)
-total= bill + tip
-per_person = total / people
+def main():
+    bill = ask_float("Bill total: $")
+    tip_percent = ask_float("Tip percent (e.g. 18): ")
+    people = ask_people("Number of people splitting: ")
 
-print()
-print(f"Tip: ${tip:.2f}")
-print(f"Total: ${total:.2f}")
-print(f"Per person: ${per_person:.2f}")
+    tip, total, per_person = calculate_tip(bill, tip_percent, people)
+
+    print()
+    print(f"Tip:        ${tip:.2f}")
+    print(f"Total:      ${total:.2f}")
+    print(f"Per person: ${per_person:.2f}")
+
+
+if __name__ == "__main__":
+    main()
