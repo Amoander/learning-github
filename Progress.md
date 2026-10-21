@@ -100,3 +100,12 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Reviewed the Tally chat's output before shipping: caught a combined download and a README overwrite
 - Learned the > prompt means an unclosed quote; Ctrl + C cancels safely
 - Completed the Phase 2 milestone and Phase 2
+
+## October 20-21, 2026
+
+- Installed pytest and wrote 5 tests for tip.py (assert, pytest.approx, pytest.raises)
+- Refactored tip.py: math in calculate_tip(), input in main(), if __name__ == "__main__"
+- Added pytest.ini and ignored .pytest_cache/ and __pycache__/
+- Debugged: test vs tests folder, stray text in a file, a stale editor tab
+- Broke tip.py on purpose and watched 3+ tests fail; undid it with git restore
+- Learned why several test cases matter: a 0% tip test missed the bug
