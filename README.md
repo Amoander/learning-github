@@ -1,5 +1,6 @@
 # learning-github
 
+![Tests](https://github.com/Amoander/learning-github/actions/workflows/tests.yml/badge.svg)
 Practice Repo for Github
 Learning Git, Github, and Python to build real skills.
 

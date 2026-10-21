@@ -109,3 +109,7 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Debugged: test vs tests folder, stray text in a file, a stale editor tab
 - Broke tip.py on purpose and watched 3+ tests fail; undid it with git restore
 - Learned why several test cases matter: a 0% tip test missed the bug
+- Added a GitHub Actions workflow (.github/workflows/tests.yml) to run pytest on every push and PR
+- First run failed: copied the "yaml" label into the file, and an extra dash split a step in two
+- Fixed it on a fix-ci branch and waited for green before merging (rule: never merge on red)
+- Added a Tests badge to the README
