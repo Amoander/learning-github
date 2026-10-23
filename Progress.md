@@ -113,3 +113,25 @@ A running log of what I've learned about Git, GitHub, and coding.
 - First run failed: copied the "yaml" label into the file, and an extra dash split a step in two
 - Fixed it on a fix-ci branch and waited for green before merging (rule: never merge on red)
 - Added a Tests badge to the README
+
+## October 23, 2026 — Claude Code + issue housekeeping
+
+**Did**
+- Used Claude Code (VS Code) in Plan mode, then "ask before edits"
+- Plan mode found Issue #4 was already built (PR #8): closed #4 as completed
+- Fixed wrong cross-references: #2 ↔ PR #3, commit 22fa1a7 → #4
+- Opened #10, built backup validation on branch validate-backup
+- Tested locally with 11 test files + a real round trip; merged PR #11 (Fixes #10)
+
+**Learned**
+- Issues and PRs share one number counter (#1 PR, #2 issue, #3 PR...)
+- Pick #numbers from GitHub's dropdown; never copy numbers from another chat
+- Read AI plans and diffs before accepting; approve one edit at a time
+- Judge a bash command: where does it write, any rm, git, or network?
+- git diff | clip copies output to the Windows clipboard
+- Defense in depth: file picker filter + validation check
+- git fetch --prune clears branches already deleted on GitHub
+- "git branch status" creates a branch named status; git status ≠ git branch
+
+**Next**
+- Build something that calls an API

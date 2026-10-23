@@ -252,8 +252,8 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
         <ul class="checks">
           <li><label><input type="checkbox" data-id="p3a"><span>Write tests for a project (pytest: 5 tests for tip.py)</span></label></li>
           <li><label><input type="checkbox" data-id="p3b"><span>Run tests automatically with GitHub Actions (green checks on every push and PR)</span></label></li>
-          <li class="now"><label><input type="checkbox" data-id="p3e"><span>Try Claude Code: build Tally Issue #4 (live sessions) on a branch, reviewing every change</span></label><em>Current lesson</em></li>
-          <li><label><input type="checkbox" data-id="p3c"><span>Build something that calls an API</span></label></li>
+          <li><label><input type="checkbox" data-id="p3e"><span>Try Claude Code: Tally Issue #10 (backup file validation) on a branch, reviewing every change</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="p3c"><span>Build something that calls an API</span></label><em>Next lesson</em></li>
           <li><label><input type="checkbox" data-id="p3d"><span class="mile">Milestone: a portfolio project with tests, CI and a strong README</span></label></li>
         </ul>
       </div>
@@ -354,15 +354,15 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v16";
+  var KEY="roadmap-checks-v17";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true,p3a:true,p3b:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true,p3a:true,p3b:true,p3e:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);
     if(raw){ state=JSON.parse(raw)||{}; }
     else{
-      var old=localStorage.getItem("roadmap-checks-v15")||localStorage.getItem("roadmap-checks-v14")||localStorage.getItem("roadmap-checks-v13")||localStorage.getItem("roadmap-checks-v12")||localStorage.getItem("roadmap-checks-v11")||localStorage.getItem("roadmap-checks-v10")||localStorage.getItem("roadmap-checks-v9")||localStorage.getItem("roadmap-checks-v8")||localStorage.getItem("roadmap-checks-v7")||localStorage.getItem("roadmap-checks-v6")||localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
+      var old=localStorage.getItem("roadmap-checks-v16")||localStorage.getItem("roadmap-checks-v15")||localStorage.getItem("roadmap-checks-v14")||localStorage.getItem("roadmap-checks-v13")||localStorage.getItem("roadmap-checks-v12")||localStorage.getItem("roadmap-checks-v11")||localStorage.getItem("roadmap-checks-v10")||localStorage.getItem("roadmap-checks-v9")||localStorage.getItem("roadmap-checks-v8")||localStorage.getItem("roadmap-checks-v7")||localStorage.getItem("roadmap-checks-v6")||localStorage.getItem("roadmap-checks-v5")||localStorage.getItem("roadmap-checks-v4")||localStorage.getItem("roadmap-checks-v3")||localStorage.getItem("roadmap-checks-v2")||localStorage.getItem("roadmap-checks-v1");
       state=old?(JSON.parse(old)||{}):{};
       for(var k in DONE) state[k]=true;
     }
