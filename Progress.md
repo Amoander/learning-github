@@ -133,5 +133,18 @@ A running log of what I've learned about Git, GitHub, and coding.
 - git fetch --prune clears branches already deleted on GitHub
 - "git branch status" creates a branch named status; git status ≠ git branch
 
-**Next**
-- Build something that calls an API
+## October 24, 2026 — GH-900 prep: Projects and milestones
+
+**Did**
+- Created the Tally Roadmap project (Kanban template), imported open issues #6 and #7
+- Added closed #10; a built-in workflow put it straight in Done
+- Moved #6 to Ready and confirmed the issue sidebar shows the same status
+- Created milestone v1.1 Live Sessions and assigned #6 and #7
+- Set #6 priority to P0
+
+**Learned**
+- Label = type, Milestone = goal + due date + % done, Project = status board
+- Projects belong to my account, not a repo, so one board can span repos
+- Board, Table and Roadmap are views of the same items
+- WIP limits (0 / 3) cap work in progress
+- "Up to date with origin/main" only means since the last fetch
