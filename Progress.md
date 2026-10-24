@@ -133,6 +133,9 @@ A running log of what I've learned about Git, GitHub, and coding.
 - git fetch --prune clears branches already deleted on GitHub
 - "git branch status" creates a branch named status; git status ≠ git branch
 
+**Next**
+- Build something that calls an API
+
 ## October 24, 2026 — GH-900 prep: Projects and milestones
 
 **Did**
@@ -148,3 +151,6 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Board, Table and Roadmap are views of the same items
 - WIP limits (0 / 3) cap work in progress
 - "Up to date with origin/main" only means since the last fetch
+
+**Next**
+- GH-900 prep: Dependabot, permissions and security settings
