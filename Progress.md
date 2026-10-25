@@ -154,3 +154,23 @@ A running log of what I've learned about Git, GitHub, and coding.
 
 **Next**
 - GH-900 prep: Dependabot, permissions and security settings
+
+## October 25, 2026 — Tally #12: delete and clear weigh-ins
+
+**Did**
+- Opened #12 (delete weigh-ins) and #13 (add my own food); auto-add put both on the board
+- Planned #12 in Claude Code (Plan mode); it found hard-coded Apr–Jun sample weights and a crash on an empty log
+- Approved edits one at a time; checked `nW` existed with grep before testing
+- Tested 10 cases locally; merged PR #14; #12 closed and moved to Done automatically
+- Opened #15 to store real weigh-in dates (found during planning)
+
+**Learned**
+- Claude design canvas ≠ Claude Code in VS Code; only one Claude session should edit files at a time
+- Plan mode questions: pick the answer, or type in "Tell Claude what to do instead"
+- `git commit -m "title" -m "body"` gives a commit a title and a body
+- Don't rewrite pushed commits for small typos
+- grep matches letters anywhere (nW matched openWeight)
+- Press F5 when GitHub pages disagree with the timeline
+
+**Next**
+- Issue #13: add my own food
