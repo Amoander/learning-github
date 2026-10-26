@@ -195,42 +195,24 @@ A running log of what I've learned about Git, GitHub, and coding.
 - Decide on online text search (#17) using the missed-foods list
 - #16 + #15: plan real dates and daily history
 
-## October 26, 2026 — Tally #15: real dates (PR 1 of 2)
+## October 26, 2026 (afternoon) — Tally #16: real daily history (PR 2 of 2)
 
 **Did**
-- Research in Plan mode: TODAY was fixed to Sep 23, 2026; days never rolled over; lots of sample data
-- Decided: remove exact-match samples; save totals + food snapshots per day (PR 2); streak later (#20)
-- Asked Claude to save migrated data immediately (stops dates shifting on the next open)
-- Tested with DevTools Console snippets on the local page (never on the live site)
-- Found and fixed: History chart still spaced by position, not date
-- Backed up my phone before merging PR #21; migration worked on real data
+- Planned rollover: saves each finished day (totals + food and exercise snapshots)
+- New day starts on open, on return to the app, and at midnight
+- Removed fake week data, random history, streak and "Days logged" cards
+- Claude matched backup checks to what the app creates (meal as text, skip 0 servings)
+- 26 automated logic checks (run by Claude) + 6 browser checks
+- Found and fixed: line chart dipped to 0 when nothing was logged today
+- PR #22 merged; #16 closed
 
 **Learned**
-- DevTools Console: F12 → Console, "allow pasting", one line at a time
-- A SyntaxError means nothing ran
-- Migrations: version the data, run once, keep old backups loadable
-- Local dates (YYYY-MM-DD), not toISOString(), to avoid the wrong day near midnight
-- "No old names" doesn't prove "new code exists": grep for both
+- Testing time-based code is hard; automate the logic, hand-test what you see
+- typeof tells you if the Console can reach a function ('undefined' = private)
+- A check must be at least as loose as the data the app itself makes
+- Approve → F5 → re-test, or you're testing old code
+- Same +/− line counts can still hide a change; grep proves it
 
 **Next**
-- PR 2 (#16): day rollover + real daily history
-
-adamm@AzureBlue MINGW64 ~/OneDrive/Desktop/Github/tally-fitness (main)
-$ git branch -d daily-history
-error: branch 'daily-history' not found
-
-adamm@AzureBlue MINGW64 ~/OneDrive/Desktop/Github/tally-fitness (main)
-$ git fetch --prune
-
-adamm@AzureBlue MINGW64 ~/OneDrive/Desktop/Github/tally-fitness (main)
-$ git branch -a
-* main
-  remotes/origin/HEAD -> origin/main
-  remotes/origin/main
-
-adamm@AzureBlue MINGW64 ~/OneDrive/Desktop/Github/tally-fitness (main)
-$ grep -n "todayLogged" index.html 
-1079:    const todayLogged = st.entries.length > 0;
-1082:    const weekLogged = weekVals.filter((v, i) => v != null && (i < 6 || todayLogged));
-1156:      if (live ? !todayLogged : !ate(r)) return null;
-1291:        const P = weekVals.map((v, i) => v == null || (i === 6 && !todayLogged) ? null : [i * (colW + 10) + colW / 2, yv(v), i === 6]).filter(Boolean);
+- Watch tomorrow morning: diary empty, yesterday's bar appears
+- #20 streak + days logged · #18 edit/delete saved foods · #17 online search decision
