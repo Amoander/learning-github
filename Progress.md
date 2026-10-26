@@ -174,3 +174,23 @@ A running log of what I've learned about Git, GitHub, and coding.
 
 **Next**
 - Issue #13: add my own food
+
+## October 25, 2026 (evening) — Tally #13: add my own food
+
+**Did**
+- Found text search only uses 18 built-in foods (#17); README was wrong
+- Opened #16 (real calorie history), #17 (search question), #18 (edit/delete saved foods)
+- Transferred #16 from learning-github to tally-fitness
+- Built #13 with Claude Code: 8 edits, two approval layers each
+- Tested 10 cases; merged PR #19 with a Co-Authored-By line
+
+**Learned**
+- Order matters: git add → git commit → git push
+- "no changes added to commit" = commit failed; push "Total 0" = nothing sent
+- Transfer issue moves an Issue between repos (new number, history kept)
+- "Fixes #N" closes on merge; "Related to #N" only links
+- My Desktop is ~/OneDrive/Desktop, not ~/Desktop
+
+**Next**
+- Decide on online text search (#17) using the missed-foods list
+- #16 + #15: plan real dates and daily history
