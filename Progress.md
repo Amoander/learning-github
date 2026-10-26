@@ -214,3 +214,23 @@ A running log of what I've learned about Git, GitHub, and coding.
 
 **Next**
 - PR 2 (#16): day rollover + real daily history
+
+adamm@AzureBlue MINGW64 ~/OneDrive/Desktop/Github/tally-fitness (main)
+$ git branch -d daily-history
+error: branch 'daily-history' not found
+
+adamm@AzureBlue MINGW64 ~/OneDrive/Desktop/Github/tally-fitness (main)
+$ git fetch --prune
+
+adamm@AzureBlue MINGW64 ~/OneDrive/Desktop/Github/tally-fitness (main)
+$ git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+adamm@AzureBlue MINGW64 ~/OneDrive/Desktop/Github/tally-fitness (main)
+$ grep -n "todayLogged" index.html 
+1079:    const todayLogged = st.entries.length > 0;
+1082:    const weekLogged = weekVals.filter((v, i) => v != null && (i < 6 || todayLogged));
+1156:      if (live ? !todayLogged : !ate(r)) return null;
+1291:        const P = weekVals.map((v, i) => v == null || (i === 6 && !todayLogged) ? null : [i * (colW + 10) + colW / 2, yv(v), i === 6]).filter(Boolean);
