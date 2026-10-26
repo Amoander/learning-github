@@ -194,3 +194,23 @@ A running log of what I've learned about Git, GitHub, and coding.
 **Next**
 - Decide on online text search (#17) using the missed-foods list
 - #16 + #15: plan real dates and daily history
+
+## October 26, 2026 — Tally #15: real dates (PR 1 of 2)
+
+**Did**
+- Research in Plan mode: TODAY was fixed to Sep 23, 2026; days never rolled over; lots of sample data
+- Decided: remove exact-match samples; save totals + food snapshots per day (PR 2); streak later (#20)
+- Asked Claude to save migrated data immediately (stops dates shifting on the next open)
+- Tested with DevTools Console snippets on the local page (never on the live site)
+- Found and fixed: History chart still spaced by position, not date
+- Backed up my phone before merging PR #21; migration worked on real data
+
+**Learned**
+- DevTools Console: F12 → Console, "allow pasting", one line at a time
+- A SyntaxError means nothing ran
+- Migrations: version the data, run once, keep old backups loadable
+- Local dates (YYYY-MM-DD), not toISOString(), to avoid the wrong day near midnight
+- "No old names" doesn't prove "new code exists": grep for both
+
+**Next**
+- PR 2 (#16): day rollover + real daily history
