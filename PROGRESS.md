@@ -216,3 +216,34 @@ A running log of what I've learned about Git, GitHub, and coding.
 **Next**
 - Watch tomorrow morning: diary empty, yesterday's bar appears
 - #20 streak + days logged · #18 edit/delete saved foods · #17 online search decision
+
+## October 27, 2026 — Tally #17: online food search (USDA)
+
+**Did**
+- Claude Code tested Open Food Facts search: blocked for browser apps or 503 for anonymous users
+- Switched to USDA FoodData Central: free personal key, stored only on my device (not in backups)
+- Claude Code auto-edited on a branch; Claude reviewed the diff + ran 17 converter checks
+- 4 browser checks passed; PR #23 merged; #17 closed; working on my phone
+
+**Learned**
+- CORS: a server must allow browser apps, or the browser blocks the answer
+- Keep API keys out of public repos; store them only on the device
+- Auto-edit is OK on a branch when the diff gets reviewed before commit
+
+**Next**
+- Use the app for a few days; note what feels clunky
+
+## October 28, 2026 — Renamed Progress.md to PROGRESS.md
+
+**Did**
+- Claude read my public repos (read-only) and found README said PROGRESS.md but the file was Progress.md
+- Renamed through a temp name (Windows/OneDrive treat the two as the same name)
+- Made the branch in the wrong repo first; deleted it and switched repos
+- PR #12 merged
+
+**Learned**
+- git mv old temp, then git mv temp NEW, for case-only renames on Windows
+- Run git status before starting, to confirm repo and branch
+
+**Next**
+- Keep using Tally; pick the next Issue from real use
