@@ -247,3 +247,20 @@ A running log of what I've learned about Git, GitHub, and coding.
 
 **Next**
 - Keep using Tally; pick the next Issue from real use
+
+## October 29, 2026 — GH-900 prep 2: security and access
+
+**Did**
+- Turned on Dependency graph, Dependabot alerts + security updates in both repos
+- Turned on Secret protection + Push protection in both repos
+- Checked Security tab: no alerts, no Dependabot PRs
+- Reviewed repo roles; quiz 6/6
+
+**Learned**
+- Dependabot needs a dependency file (requirements.txt); tally-fitness has none
+- Secret scanning reports leaks; push protection blocks them before they land
+- Dependabot PRs still need green tests before merging
+- Roles: Read · Triage · Write · Maintain · Admin; least privilege = only what's needed
+
+**Next**
+- Create Issues for 2 Tally enhancements; keep documenting the third
