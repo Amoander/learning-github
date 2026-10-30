@@ -272,7 +272,7 @@ A running log of what I've learned about Git, GitHub, and coding.
 - #25: Diary ‹ › show past days (foods, exercises, water, totals), view only; PR #27
 - #26: weights limited to 50–700 lb / 23–318 kg; PR merged
 - Testing #26 found a bug: tapping Save after an invalid entry logged the old weight; fixed
-- Sister's Goals screen was missing the USDA key box; fixed by: ________
+- Goals screen was missing the USDA key box; fixed by: Ryan
 
 **Learned**
 - Claude Code is enabled per workspace: open the right project window first
