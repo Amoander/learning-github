@@ -264,3 +264,21 @@ A running log of what I've learned about Git, GitHub, and coding.
 
 **Next**
 - Create Issues for 2 Tally enhancements; keep documenting the third
+
+## October 30, 2026 — Tally #25 past days + #26 weight limits
+
+**Did**
+- Created Issues #24 (barcode → USDA), #25 (past days), #26 (weight limits)
+- #25: Diary ‹ › show past days (foods, exercises, water, totals), view only; PR #27
+- #26: weights limited to 50–700 lb / 23–318 kg; PR merged
+- Testing #26 found a bug: tapping Save after an invalid entry logged the old weight; fixed
+- Sister's Goals screen was missing the USDA key box; fixed by: ________
+
+**Learned**
+- Claude Code is enabled per workspace: open the right project window first
+- Events happen in order (blur before click), so a Save can run on stale state
+- Test the "unhappy path" (bad input + Save), not just the normal one
+- Close and reopen the app after an update to load the new version
+
+**Next**
+- #24 barcode → USDA · the third idea (still documenting) · GH-900 prep 3
