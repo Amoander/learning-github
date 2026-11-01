@@ -282,3 +282,23 @@ A running log of what I've learned about Git, GitHub, and coding.
 
 **Next**
 - #24 barcode → USDA · the third idea (still documenting) · GH-900 prep 3
+
+## November 1, 2026 — First Python API script
+
+**Did**
+- Wrote scripts/food_search.py: searches USDA FoodData Central and prints calories per 100 g
+- Stored the API key in usda_key.txt and added it to .gitignore (fixed a rule that got joined onto the line above)
+- Added requests to requirements.txt with pip freeze
+- Broke the key on purpose to see a 403 Forbidden error
+- Updated roadmap: API item done
+
+**Learned**
+- requests.get with params, timeout, raise_for_status() and .json()
+- ALL CAPS results are Branded foods; normal case is USDA's own data
+- Error messages can print the full URL, including the key, so check before pasting
+- git add by file name instead of `git add .` keeps secrets out
+- A `>` prompt means an open quote; Ctrl+C gets out safely
+
+**Next**
+- GH-900 prep 3: Codespaces and Copilot
+- Optional: try/except in food_search.py for a friendly error message

@@ -253,7 +253,7 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
           <li><label><input type="checkbox" data-id="p3a"><span>Write tests for a project (pytest: 5 tests for tip.py)</span></label></li>
           <li><label><input type="checkbox" data-id="p3b"><span>Run tests automatically with GitHub Actions (green checks on every push and PR)</span></label></li>
           <li><label><input type="checkbox" data-id="p3e"><span>Try Claude Code: Tally Issue #10 (backup file validation) on a branch, reviewing every change</span></label></li>
-          <li class="now"><label><input type="checkbox" data-id="p3c"><span>Build something that calls an API</span></label><em>Next lesson</em></li>
+          <li><label><input type="checkbox" data-id="p3c"><span>Build something that calls an API (scripts/food_search.py: USDA search)</span></label></li>
           <li><label><input type="checkbox" data-id="p3d"><span class="mile">Milestone: a portfolio project with tests, CI and a strong README</span></label></li>
         </ul>
       </div>
@@ -302,7 +302,7 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
         <ul class="checks">
           <li><label><input type="checkbox" data-id="c1a"><span>Prep: Projects boards and milestones</span></label></li>
           <li><label><input type="checkbox" data-id="c1b"><span>Prep: Dependabot, permissions and security settings</span></label></li>
-          <li><label><input type="checkbox" data-id="c1c"><span>Prep: Codespaces and Copilot</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="c1c"><span>Prep: Codespaces and Copilot</span></label><em>Next lesson</em></li>
           <li><label><input type="checkbox" data-id="c1d"><span>Prep: forks, Discussions and open source</span></label></li>
           <li><label><input type="checkbox" data-id="c1e"><span>Prep: code review with comments</span></label></li>
           <li><label><input type="checkbox" data-id="c1"><span>Earned</span></label></li>
@@ -361,9 +361,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v19";
+  var KEY="roadmap-checks-v20";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true,p3a:true,p3b:true,p3e:true,c1a:true,c1b:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true,p3a:true,p3b:true,p3e:true,p3c:true,c1a:true,c1b:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);
