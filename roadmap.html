@@ -302,8 +302,8 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
         <ul class="checks">
           <li><label><input type="checkbox" data-id="c1a"><span>Prep: Projects boards and milestones</span></label></li>
           <li><label><input type="checkbox" data-id="c1b"><span>Prep: Dependabot, permissions and security settings</span></label></li>
-          <li class="now"><label><input type="checkbox" data-id="c1c"><span>Prep: Codespaces and Copilot</span></label><em>Next lesson</em></li>
-          <li><label><input type="checkbox" data-id="c1d"><span>Prep: forks, Discussions and open source</span></label></li>
+          <li><label><input type="checkbox" data-id="c1c"><span>Prep: Codespaces and Copilot</span></label></li>
+          <li class="now"><label><input type="checkbox" data-id="c1d"><span>Prep: forks, Discussions and open source</span></label><em>Next lesson</em></li>
           <li><label><input type="checkbox" data-id="c1e"><span>Prep: code review with comments</span></label></li>
           <li><label><input type="checkbox" data-id="c1"><span>Earned</span></label></li>
         </ul>
@@ -361,9 +361,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v20";
+  var KEY="roadmap-checks-v21";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true,p3a:true,p3b:true,p3e:true,p3c:true,c1a:true,c1b:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true,p3a:true,p3b:true,p3e:true,p3c:true,c1a:true,c1b:true,c1c:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);

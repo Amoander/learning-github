@@ -302,3 +302,24 @@ A running log of what I've learned about Git, GitHub, and coding.
 **Next**
 - GH-900 prep 3: Codespaces and Copilot
 - Optional: try/except in food_search.py for a friendly error message
+
+## November 5, 2026 — GH-900 prep 3: Codespaces and Copilot
+
+**Did**
+- Opened a Codespace on learning-github, confirmed usda_key.txt was not there, ran pytest (5 passed)
+- Deleted the Codespace afterward
+- Studied Copilot features, plans and responsible use
+- Quiz: 88% (7/8)
+
+**Learned**
+- A Codespace clones only what's pushed; gitignored files stay on my laptop
+- Stop keeps storage and unpushed work; delete frees storage and loses unpushed work
+- github.dev (press .) = browser editor with no terminal; a Codespace = a full machine
+- .devcontainer/devcontainer.json sets up the Codespace; .github/workflows/*.yml runs Actions
+- Copilot: completions, Chat, agent mode, coding agent (Issue → PR), CLI
+- Business/Enterprise add policies and content exclusions; the public code filter blocks matches to public code
+- Review AI code like any code, whether it's from Copilot or Claude
+
+**Next**
+- GH-900 prep 4: forks, Discussions and open source
+- Decide whether to add a "Using Claude well" track to the roadmap
