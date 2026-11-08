@@ -278,11 +278,16 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
     <section class="phase" id="p5">
       <div class="rail"><div class="dot">5</div></div>
       <div class="card">
-        <div class="head"><h2>Getting the most out of Claude</h2><span class="when">Ongoing</span></div>
-        <ul class="topics"><li>Give context up front</li><li>Examples of desired output</li><li>Iterate, don't restart</li><li>Projects</li><li>Artifacts</li><li>Search for current docs</li><li>Claude Code</li></ul>
+        <div class="head"><h2>Getting the most out of Claude</h2><span class="when">Ongoing: one ~20 min session between regular lessons</span></div>
+        <ul class="topics"><li>Give context up front</li><li>Examples of desired output</li><li>Iterate, don't restart</li><li>Projects</li><li>Artifacts</li><li>Search for current docs</li><li>Claude Code</li><li>CLAUDE.md</li><li>Verifying output</li><li>Choosing the right tool</li></ul>
         <div class="claude"><strong>Mindset:</strong> treat Claude as a knowledgeable pair programmer. Read and understand code before committing it, and check important details against official docs.</div>
         <h3>Checklist</h3>
         <ul class="checks">
+          <li><label><input type="checkbox" data-id="p5d"><span>Session 1, Context: what Claude can see in a chat, a Project, Claude Code and memory</span></label></li>
+          <li><label><input type="checkbox" data-id="p5e"><span>Session 2, Prompting: clear asks, examples, and what "done" looks like (write a Tally Issue Claude can act on)</span></label></li>
+          <li><label><input type="checkbox" data-id="p5f"><span>Session 3, CLAUDE.md: standing instructions for Claude Code in tally-fitness</span></label></li>
+          <li><label><input type="checkbox" data-id="p5g"><span>Session 4, Verifying Claude: catch wrong claims, ask for sources, review a real diff</span></label></li>
+          <li><label><input type="checkbox" data-id="p5h"><span>Session 5, Choosing the tool: chat vs Project vs Claude Code vs Copilot</span></label></li>
           <li><label><input type="checkbox" data-id="p5a"><span>Set up a Claude Project for a codebase</span></label></li>
           <li><label><input type="checkbox" data-id="p5b"><span>Use Claude Code on a real project and review every change</span></label></li>
           <li><label><input type="checkbox" data-id="p5c"><span class="mile">Milestone: ship a feature end to end with Claude as your pair</span></label></li>
@@ -361,9 +366,9 @@ button.reset:focus-visible{outline:3px solid var(--claude);outline-offset:2px}
 
 <script>
 (function(){
-  var KEY="roadmap-checks-v21";
+  var KEY="roadmap-checks-v22";
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
-  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true,p3a:true,p3b:true,p3e:true,p3c:true,c1a:true,c1b:true,c1c:true};
+  var DONE={p1a:true,p1f:true,p1g:true,p1h:true,p1i:true,p1j:true,p1l:true,p1m:true,p1b:true,p1k:true,p1c:true,p1n:true,p1o:true,p1p:true,p1q:true,p1r:true,p1s:true,p1t:true,p1e:true,p2a:true,p2f:true,p2g:true,p2b:true,p2c:true,p2h:true,p2i:true,p2j:true,p2k:true,p2d:true,p3a:true,p3b:true,p3e:true,p3c:true,c1a:true,c1b:true,c1c:true,p5d:true};
   var state={};
   try{
     var raw=localStorage.getItem(KEY);

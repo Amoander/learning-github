@@ -323,3 +323,22 @@ A running log of what I've learned about Git, GitHub, and coding.
 **Next**
 - GH-900 prep 4: forks, Discussions and open source
 - Decide whether to add a "Using Claude well" track to the roadmap
+
+## November 8, 2026 — Claude session 1: Context
+
+**Did**
+- Added 5 "Getting the most out of Claude" sessions to roadmap Phase 5
+- Learned what Claude can see in a chat, a Project, Claude Code and memory
+- Wrote a handoff prompt for Tally #24, then revised it with feedback
+- Quiz: 100% (5/5)
+
+**Learned**
+- Claude only knows what's in front of it; each chat, Project and Claude Code session sees different things
+- The Oct 23 mix-up: chat numbering was treated as GitHub numbering because nothing checked GitHub
+- Long chats get summarized, so important facts belong in files (PROGRESS.md, roadmap)
+- A good handoff has: what, where it's at, source of truth (named files, pasted text), constraints, how to work
+- Say what already exists so Claude extends it instead of rebuilding it
+
+**Next**
+- GH-900 prep 4: forks, Discussions and open source
+- Use the revised #24 handoff prompt when building the barcode → USDA fallback
