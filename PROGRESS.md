@@ -342,3 +342,24 @@ A running log of what I've learned about Git, GitHub, and coding.
 **Next**
 - GH-900 prep 4: forks, Discussions and open source
 - Use the revised #24 handoff prompt when building the barcode → USDA fallback
+
+## November 9, 2026 — GH-900 prep 4: forks, Discussions and open source
+
+**Did**
+- Forked octocat/Spoon-Knife, committed to my fork, saw "1 commit ahead" and previewed a cross-repo PR (didn't send it)
+- Turned on Discussions (in the fork), posted a Q&A question and marked my own answer
+- Checked Community standards for learning-github: README and description only
+- Deleted the practice fork
+- Quiz: 75% (6/8), both misses on licenses
+
+**Learned**
+- Branch = inside a repo; fork = my copy of someone else's repo on GitHub; clone = copy on my computer
+- Contribute sends a PR up to upstream; Sync fork pulls upstream changes down
+- Issues = work to do; Discussions = conversation (Q&A can mark an answer)
+- No license = all rights reserved; MIT/Apache = permissive; GPL = copyleft ("give it back open")
+- Check the repo name in the top-left before changing Settings
+- Decided: no LICENSE for learning-github for now
+
+**Next**
+- Claude session 2: Prompting
+- Then GH-900 prep 5: code review
