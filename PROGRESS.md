@@ -363,3 +363,23 @@ A running log of what I've learned about Git, GitHub, and coding.
 **Next**
 - Claude session 2: Prompting
 - Then GH-900 prep 5: code review
+
+## November 10, 2026 — Claude session 2: Prompting
+
+**Did**
+- Confirmed the Spoon-Knife fork was deleted (refreshed to see Repositories 2)
+- Rewrote Tally Issue #18 as a Claude-ready prompt: ASK, CONTEXT, EXAMPLE, DONE WHEN, LIMITS, QUESTIONS
+- Expanded #18's scope to ANY saved food (manual, scanned or USDA)
+- Quiz: 100% (5/5)
+
+**Learned**
+- EXAMPLE = what it looks like; DONE WHEN = the checklist I test against
+- LIMITS fence the scope ("only touch code for this change; otherwise ask")
+- Unclear decisions go in QUESTIONS instead of letting Claude pick silently
+- Words that name things must be exact ("Diary", not "Dairy")
+- GitHub Markdown hides <name> as an HTML tag; check the rendered result
+- Iterate with specific corrections instead of restarting
+
+**Next**
+- GH-900 prep 5: code review
+- Fix "Delete <name>?" in #18 to use [name]
